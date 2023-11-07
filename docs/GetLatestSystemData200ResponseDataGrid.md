@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **voltage** | **float** |  | [optional] 
-**current** | **int** |  | [optional] 
+**current** | **float** |  | [optional] 
 **power** | **int** |  | [optional] 
 **frequency** | **float** |  | [optional] 
 

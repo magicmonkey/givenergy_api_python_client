@@ -26,7 +26,7 @@ class GetLatestSystemData200ResponseDataGrid(BaseModel):
     GetLatestSystemData200ResponseDataGrid
     """
     voltage: Optional[Union[StrictFloat, StrictInt]] = None
-    current: Optional[StrictInt] = None
+    current: Optional[Union[StrictFloat, StrictInt]] = None
     power: Optional[StrictInt] = None
     frequency: Optional[Union[StrictFloat, StrictInt]] = None
     __properties = ["voltage", "current", "power", "frequency"]
