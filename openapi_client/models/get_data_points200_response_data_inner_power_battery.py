@@ -18,8 +18,8 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
-from pydantic import BaseModel, StrictInt
+from typing import Optional, Union
+from pydantic import BaseModel, StrictFloat, StrictInt
 
 class GetDataPoints200ResponseDataInnerPowerBattery(BaseModel):
     """
@@ -27,7 +27,7 @@ class GetDataPoints200ResponseDataInnerPowerBattery(BaseModel):
     """
     percent: Optional[StrictInt] = None
     power: Optional[StrictInt] = None
-    temperature: Optional[StrictInt] = None
+    temperature: Optional[Union[StrictFloat, StrictInt]] = None
     __properties = ["percent", "power", "temperature"]
 
     class Config:

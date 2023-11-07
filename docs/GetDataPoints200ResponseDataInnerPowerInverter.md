@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**temperature** | **int** |  | [optional] 
+**temperature** | **float** |  | [optional] 
 **power** | **int** |  | [optional] 
 **output_voltage** | **float** |  | [optional] 
 **output_frequency** | **float** |  | [optional] 

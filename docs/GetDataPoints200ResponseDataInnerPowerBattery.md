@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **percent** | **int** |  | [optional] 
 **power** | **int** |  | [optional] 
-**temperature** | **int** |  | [optional] 
+**temperature** | **float** |  | [optional] 
 
 ## Example
 

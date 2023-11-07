@@ -25,7 +25,7 @@ class GetDataPoints200ResponseDataInnerPowerInverter(BaseModel):
     """
     GetDataPoints200ResponseDataInnerPowerInverter
     """
-    temperature: Optional[StrictInt] = None
+    temperature: Optional[Union[StrictFloat, StrictInt]] = None
     power: Optional[StrictInt] = None
     output_voltage: Optional[Union[StrictFloat, StrictInt]] = None
     output_frequency: Optional[Union[StrictFloat, StrictInt]] = None
