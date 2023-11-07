@@ -31,7 +31,7 @@ class GetLatestMeterData200ResponseDataTotal(BaseModel):
     grid: Optional[GetLatestMeterData200ResponseDataTotalGrid] = None
     battery: Optional[GetLatestMeterData200ResponseDataTotalBattery] = None
     consumption: Optional[Union[StrictFloat, StrictInt]] = None
-    ac_charge: Optional[StrictInt] = None
+    ac_charge: Optional[Union[StrictFloat, StrictInt]] = None
     __properties = ["solar", "grid", "battery", "consumption", "ac_charge"]
 
     class Config:

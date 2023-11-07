@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **grid** | [**GetLatestMeterData200ResponseDataTodayGrid**](GetLatestMeterData200ResponseDataTodayGrid.md) |  | [optional] 
 **battery** | [**GetLatestMeterData200ResponseDataTodayBattery**](GetLatestMeterData200ResponseDataTodayBattery.md) |  | [optional] 
 **consumption** | **float** |  | [optional] 
-**ac_charge** | **int** |  | [optional] 
+**ac_charge** | **float** |  | [optional] 
 
 ## Example
 
