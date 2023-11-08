@@ -101,7 +101,6 @@ docs/ModifyPreset200ResponseData.md
 docs/ModifySetting200Response.md
 docs/ModifySetting200ResponseData.md
 docs/ModifySettingMultipleRequest.md
-docs/ModifySettingRequest.md
 docs/ReadSetting200Response.md
 docs/ReadSetting200ResponseData.md
 docs/ReadSettingMultipleRequest.md
@@ -215,7 +214,6 @@ openapi_client/models/modify_preset200_response_data.py
 openapi_client/models/modify_setting200_response.py
 openapi_client/models/modify_setting200_response_data.py
 openapi_client/models/modify_setting_multiple_request.py
-openapi_client/models/modify_setting_request.py
 openapi_client/models/read_setting200_response.py
 openapi_client/models/read_setting200_response_data.py
 openapi_client/models/read_setting_multiple_request.py

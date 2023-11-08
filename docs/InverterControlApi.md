@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **modify_setting**
-> ModifySetting200Response modify_setting(inverter_serial_number, setting_id, modify_setting_request, authorization=authorization)
+> ModifySetting200Response modify_setting(inverter_serial_number, setting_id, body, authorization=authorization)
 
 Modify Setting
 
@@ -266,7 +266,6 @@ import time
 import os
 import openapi_client
 from openapi_client.models.modify_setting200_response import ModifySetting200Response
-from openapi_client.models.modify_setting_request import ModifySettingRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -292,12 +291,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.InverterControlApi(api_client)
     inverter_serial_number = 'CE1234G567' # str | The serial number of the inverter.
     setting_id = 17 # int | The ID of the setting.
-    modify_setting_request = openapi_client.ModifySettingRequest() # ModifySettingRequest | 
+    body = None # object | 
     authorization = 'Bearer {YOUR_API_KEY}' # str |  (optional)
 
     try:
         # Modify Setting
-        api_response = api_instance.modify_setting(inverter_serial_number, setting_id, modify_setting_request, authorization=authorization)
+        api_response = api_instance.modify_setting(inverter_serial_number, setting_id, body, authorization=authorization)
         print("The response of InverterControlApi->modify_setting:\n")
         pprint(api_response)
     except Exception as e:
@@ -312,7 +311,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inverter_serial_number** | **str**| The serial number of the inverter. | 
  **setting_id** | **int**| The ID of the setting. | 
- **modify_setting_request** | [**ModifySettingRequest**](ModifySettingRequest.md)|  | 
+ **body** | **object**|  | 
  **authorization** | **str**|  | [optional] 
 
 ### Return type

@@ -21,13 +21,12 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 
-from typing import Optional
+from typing import Any, Dict, Optional
 
 from openapi_client.models.get_settings_list200_response import GetSettingsList200Response
 from openapi_client.models.modify_preset200_response import ModifyPreset200Response
 from openapi_client.models.modify_setting200_response import ModifySetting200Response
 from openapi_client.models.modify_setting_multiple_request import ModifySettingMultipleRequest
-from openapi_client.models.modify_setting_request import ModifySettingRequest
 from openapi_client.models.read_setting200_response import ReadSetting200Response
 from openapi_client.models.read_setting_multiple_request import ReadSettingMultipleRequest
 
@@ -504,22 +503,22 @@ class InverterControlApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def modify_setting(self, inverter_serial_number : Annotated[StrictStr, Field(..., description="The serial number of the inverter.")], setting_id : Annotated[StrictInt, Field(..., description="The ID of the setting.")], modify_setting_request : ModifySettingRequest, authorization : Optional[StrictStr] = None, **kwargs) -> ModifySetting200Response:  # noqa: E501
+    def modify_setting(self, inverter_serial_number : Annotated[StrictStr, Field(..., description="The serial number of the inverter.")], setting_id : Annotated[StrictInt, Field(..., description="The ID of the setting.")], body : Dict[str, Any], authorization : Optional[StrictStr] = None, **kwargs) -> ModifySetting200Response:  # noqa: E501
         """Modify Setting  # noqa: E501
 
         Write a value to the setting on the inverter  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.modify_setting(inverter_serial_number, setting_id, modify_setting_request, authorization, async_req=True)
+        >>> thread = api.modify_setting(inverter_serial_number, setting_id, body, authorization, async_req=True)
         >>> result = thread.get()
 
         :param inverter_serial_number: The serial number of the inverter. (required)
         :type inverter_serial_number: str
         :param setting_id: The ID of the setting. (required)
         :type setting_id: int
-        :param modify_setting_request: (required)
-        :type modify_setting_request: ModifySettingRequest
+        :param body: (required)
+        :type body: object
         :param authorization: 
         :type authorization: str
         :param async_req: Whether to execute the request asynchronously.
@@ -537,25 +536,25 @@ class InverterControlApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the modify_setting_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return self.modify_setting_with_http_info(inverter_serial_number, setting_id, modify_setting_request, authorization, **kwargs)  # noqa: E501
+        return self.modify_setting_with_http_info(inverter_serial_number, setting_id, body, authorization, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def modify_setting_with_http_info(self, inverter_serial_number : Annotated[StrictStr, Field(..., description="The serial number of the inverter.")], setting_id : Annotated[StrictInt, Field(..., description="The ID of the setting.")], modify_setting_request : ModifySettingRequest, authorization : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def modify_setting_with_http_info(self, inverter_serial_number : Annotated[StrictStr, Field(..., description="The serial number of the inverter.")], setting_id : Annotated[StrictInt, Field(..., description="The ID of the setting.")], body : Dict[str, Any], authorization : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Modify Setting  # noqa: E501
 
         Write a value to the setting on the inverter  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.modify_setting_with_http_info(inverter_serial_number, setting_id, modify_setting_request, authorization, async_req=True)
+        >>> thread = api.modify_setting_with_http_info(inverter_serial_number, setting_id, body, authorization, async_req=True)
         >>> result = thread.get()
 
         :param inverter_serial_number: The serial number of the inverter. (required)
         :type inverter_serial_number: str
         :param setting_id: The ID of the setting. (required)
         :type setting_id: int
-        :param modify_setting_request: (required)
-        :type modify_setting_request: ModifySettingRequest
+        :param body: (required)
+        :type body: object
         :param authorization: 
         :type authorization: str
         :param async_req: Whether to execute the request asynchronously.
@@ -588,7 +587,7 @@ class InverterControlApi:
         _all_params = [
             'inverter_serial_number',
             'setting_id',
-            'modify_setting_request',
+            'body',
             'authorization'
         ]
         _all_params.extend(
@@ -636,8 +635,8 @@ class InverterControlApi:
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['modify_setting_request'] is not None:
-            _body_params = _params['modify_setting_request']
+        if _params['body'] is not None:
+            _body_params = _params['body']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
